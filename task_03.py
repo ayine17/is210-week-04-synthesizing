@@ -7,19 +7,17 @@
 from decimal import Decimal
 # import locale
 
-
-FIRSTFNAME = raw_input('What is your First name?\n')
-LASTFNAME = raw_input('What is your First name?\n')
-NAME = FIRSTFNAME + ' ' + LASTFNAME
+LOANERNAME = raw_input('What is your First and last name?\n')
 
 PRINCIPAL = raw_input('What is the principal of the loan?\n')
-P = float(PRINCIPAL)
 
 LOANTREM = raw_input('how long is this being borrowed?\n')
-T = float(LOANTREM)
 
 PRE_QUALIFIED = raw_input('Are you pre-qualified Yes or No?\n')
+
 PRE_QUALIFIED = PRE_QUALIFIED[:1].lower()
+P = float(PRINCIPAL)
+T = float(LOANTREM)
 
 N = 12   # interest is compounded monthly ( so n = 12 in our above equation ).
 
@@ -129,7 +127,7 @@ LOANTREMS = LOANTREM + 'yrs'
 # print ('{0:>20}''{1:>20}').format('Total:',TOTAL)
 
 REPORT = ('Loan Report for: {}\n{}\n{:>20}{:>20}\n{:>20}{:>20}\n'
-          '{:>20}{:>20}\n\n{:>20}{:>20}').format(NAME, '-'*80,
+          '{:>20}{:>20}\n\n{:>20}{:>20}').format(LOANERNAME, '-'*80,
                                                  'Principal:',
                                                  PRINCIPAL, 'Duration:',
                                                  LOANTREMS,
